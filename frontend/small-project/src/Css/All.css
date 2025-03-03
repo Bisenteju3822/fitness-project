@@ -1,0 +1,490 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* ===== General Styles ===== */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  /* Background color */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Adjusting padding-top for body to accommodate the navbar height */
+body {
+  padding-top: 70px;
+  /* Adjust according to navbar height */
+}
+
+/* ===== Navbar Styles ===== */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #14b8a6;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #0e7c6b;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item a:hover {
+  background-color: #14b8a6;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ===== Navbar Button ===== */
+.navbar button {
+  margin: 10px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #14b8a6;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #14b8a6;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ===== Modal Styling ===== */
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  max-width: 500px;
+  /* Ensures proper width */
+}
+
+.modal-content {
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Centering Modal Header */
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.modal-title {
+  color: #14b8a6;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+/* Centering Modal Footer Buttons */
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Customizing Inputs */
+.form-control,
+.form-select {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #14b8a6;
+  background-color: #222;
+  color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0e7c6b;
+  box-shadow: 0px 0px 8px rgba(20, 184, 166, 0.5);
+}
+
+/* Modal Buttons */
+.btn-primary {
+  background-color: #14b8a6;
+  border-color: #14b8a6;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0e7c6b;
+  border-color: #0e7c6b;
+}
+
+/* ===== Footer Styling ===== */
+.footer {
+  padding: 1rem 0;
+  color: #bbb;
+  background-color: #1a1a1a;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer .brand-highlight {
+  color: #14b8a6;
+}
+
+.footer .footer-link {
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .footer-link:hover {
+  color: #14b8a6;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .social-icon {
+  color: #bbb;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icon:hover {
+  color: #14b8a6;
+  transform: scale(1.2);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-brand {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav-item a {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+#homeDoctors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 18rem;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid #14b8a6;
+  transition: transform 0.2s;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card img {
+  border-radius: 20px;
+  border: 2px solid #14b8a6;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px auto;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #14b8a6;
+}
+
+.card-text {
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.card-button {
+  background-color: #14b8a6;
+  border-color: #14b8a6;
+  font-weight: 400;
+}
+
+.card-button:hover {
+  background-color: #0e7d74;
+  border-color: #0e7d74;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 100px;
+  /* Adjust to ensure it's below the fixed navbar */
+  color: #14b8a6;
+  font-weight: 700;
+  font-size: 2.5rem;
+  /* Adjust font size for better prominence */
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: #14b8a6;
+}
+
+.admin-header {
+  background-color: #14b8a6;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #14b8a6;
+}
+
+.admin-welcome {
+  text-align: right;
+  background-color: black;
+  padding: 20px;
+  color: #14b8a6;
+  border-bottom: 2px solid #14b8a6;
+}
+
+.admin-welcome a {
+  color: #14b8a6;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#dotordashboard {
+  display: flex;
+  height: calc(100% - 104px);
+  /* Adjust height based on header and welcome sections */
+}
+
+#docleftmenu {
+  width: 20%;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-right: 2px solid #14b8a6;
+}
+
+#docleftmenu a {
+  display: block;
+  color: #14b8a6;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+#docleftmenu a:hover {
+  color: black;
+  background-color: #14b8a6;
+}
+
+#dashboarddata {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: black;
+  color: #c9d2d1;
+  border-left: 2px solid #14b8a6;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#dashboarddata.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Fade-in Animation */
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Animation for Cards */
+.card:hover {
+  animation: hoverCard 0.3s ease-in-out forwards;
+}
+
+@keyframes hoverCard {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  #homeDoctors {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Additional Responsive Styles */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .nav-item a {
+    padding: 0.5rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #14b8a6;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #14b8a6;
+  color: white;
+}
+
+
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 10px 0;
+  }
+}
