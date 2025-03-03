@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import BASE_URL from "../config";
 import "../Css/All.css";
 
-const MyLearner = () => {
+const Learner = () => {
   const [workouts, setWorkouts] = useState([]);
 
   const loadWorkouts = async () => {
@@ -64,4 +64,4 @@ const MyLearner = () => {
   );
 };
 
-export default MyLearner;
+export default Learner;
