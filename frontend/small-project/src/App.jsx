@@ -5,7 +5,7 @@ import DoctorLogin from "./Pages/Login";
 import FitDashBoard from "./DashBoard";
 import SearchTrianer from "./Pages/Search";
 import TrainerAppointment from "./Pages/TraineeAppointment";
-import Learner from "./Pages/Mylearn";
+import NewLearner from "./Pages/NewLearner";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/fitapp/:id" element={<TrainerAppointment />} />
         </Route>
         <Route path="/fitdashboard" element={<FitDashBoard />} />
-        <Route path="/mypatient" element={<Learner />} />
+        <Route path="/mypatient" element={<NewLearner />} />
       </Routes>
     </>
   );
