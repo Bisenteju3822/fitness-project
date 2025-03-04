@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import "../Css/All.css"; // Import your CSS file
 import { Container } from "react-bootstrap";
 
 const DoctorLogin = () => {
@@ -39,81 +37,104 @@ const DoctorLogin = () => {
 
   return (
     <>
-      <Container
-        id="doclogin"
-        className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "100vh", backgroundColor: "black" }}
-      >
-        <div
-          style={{
-            marginLeft: "450px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            border: "8px solid #ccc",
-            borderRadius: "15px",
-            padding: "20px",
-            backgroundColor: " #14b8a6",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-            maxWidth: "600px",
-            width: "100%",
-          }}
-        >
+      <style>
+        {`
+          #doclogin {
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .login-container {
+          margin-top:250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 8px solid #ccc;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #14b8a6;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            length:50px
+          }
+
+          .login-image {
+            border-radius: 15px;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 150px;
+            transition: transform 0.2s;
+          }
+
+          .login-image:hover {
+            transform: scale(1.1);
+          }
+
+          h1 {
+            font-size: 4rem;
+            margin-top: 20px;
+            color: white;
+          }
+
+          h1 span {
+            color: black;
+          }
+
+          .form-content {
+            width: 100%;
+          }
+
+          .submit-button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background-color: black;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+          }
+
+          .submit-button:hover {
+            background-color: #333;
+          }
+        `}
+      </style>
+
+      <Container id="doclogin">
+        <div className="login-container">
           <img
-            src="Screenshot 2024-11-29 165956.png" // Replace with your image URL
+            src="Screenshot 2024-11-29 165956.png"
             alt="Doctor"
-            style={{
-              borderRadius: "15px",
-              marginBottom: "20px",
-              width: "150px",
-              height: "150px",
-              transition: "transform 0.2s",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.1)")
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            className="login-image"
           />
-          <h1 style={{ fontSize: "4rem", marginTop: "20px", color: "white" }}>
-            Trainer <span style={{ color: "black" }}>Login</span>
+          <h1>
+            Trainer <span>Login</span>
           </h1>
-          <Form className="form-content" style={{ width: "100%" }}>
+          <Form className="form-content">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label
-                style={{
-                  fontSize: "1.5rem",
-                  color: "black",
-                  marginLeft: "50px",
-                }}
-              >
-                Email
-              </Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={(e) => setEmail(e.target.value)}
                 size="lg"
-                style={{ fontSize: "1.2rem", padding: "10px" }}
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label style={{ fontSize: "1.5rem", color: "black" }}>
-                Password
-              </Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
                 name="password"
                 value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={(e) => setPassword(e.target.value)}
                 size="lg"
-                style={{ fontSize: "1.2rem", padding: "10px" }}
               />
             </Form.Group>
             <Button
@@ -121,11 +142,7 @@ const DoctorLogin = () => {
               type="submit"
               onClick={handleSubmit}
               size="lg"
-              style={{
-                fontSize: "1.2rem",
-                padding: "10px 20px",
-                backgroundColor: "black",
-              }}
+              className="submit-button"
             >
               Submit
             </Button>
